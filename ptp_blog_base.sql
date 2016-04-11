@@ -23,7 +23,7 @@ CREATE TABLE categorie (
 );
 
 --
--- données pour la table `categorie`
+-- donnÃ©es pour la table `categorie`
 --
 
 INSERT INTO `categorie` (`nom`) VALUES
@@ -38,11 +38,12 @@ CREATE TABLE utilisateur(
         id           int UNSIGNED Auto_increment,
         pseudo       Varchar (150) NOT NULL ,
         mot_de_passe Varchar (255) NOT NULL ,
-        PRIMARY KEY (id )
+        PRIMARY KEY (id ),
+        UNIQUE INDEX ind_pseudo (pseudo)
 )ENGINE=InnoDB;
 
 --
--- données pour la table `utilisateur`
+-- donnÃ©es pour la table `utilisateur`
 --
 
 INSERT INTO `utilisateur` (`pseudo`, `mot_de_passe`) VALUES
@@ -65,7 +66,7 @@ CREATE TABLE article(
 )ENGINE=InnoDB;
 
 --
--- Triggers `article` pour mise à jour categorie_article
+-- Triggers `article` pour mise Ã  jour categorie_article
 --
 DROP TRIGGER IF EXISTS `insert_check_article`;
 DELIMITER //
@@ -114,7 +115,7 @@ ALTER TABLE categorie_article ADD CONSTRAINT FK_categorie_article_categorie_id F
 
 
 --
--- données pour la table `article`
+-- donnÃ©es pour la table `article`
 --
 
 INSERT INTO `article` (`titre`, `extrait`, `texte`, `categorie_id`, `utilisateur_id`) VALUES
