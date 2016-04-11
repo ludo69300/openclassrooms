@@ -1,2 +1,3 @@
 # openclassrooms
-Exercice Git &amp; GitHub - Partie 2 Activité
+Gérer son code avec Git et GitHub
+ActivitÃ© Partie 2 : Partager un repository sur GitHub
