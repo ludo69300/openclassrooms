@@ -30,6 +30,16 @@ FROM article
 INNER JOIN categorie_article 
 	ON categorie_article.article_id=article.id
 WHERE categorie_article.categorie_id=1
+
+-- ------------------------------------------------------------
+--  page article : article complet ainsi que ses commentaires par ordre chronologique
+-- ------------------------------------------------------------
+
+SELECT article.titre, article.id, DATE_FORMAT(article.dT_edit, '%d/%m/%Y') AS dt_art, article.extrait, texte, commentaire.commentaire
+FROM article 
+LEFT JOIN commentaire 
+	ON commentaire.article_id=article.id
+ORDER BY dT_edit
 ORDER BY dT_edit
 
 
